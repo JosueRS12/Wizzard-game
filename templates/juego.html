@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Wizard Game</title>
+    <link href="{{url_for('static', filename='styles/juego.css')}}" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <div class="container-header" >
+        <h1>Wizard Game<h1>
+      </div> 
+    </header>
+
+    <section id="canvas">
+      <div class="canvas-container">
+        <canvas id="myCanvas" class="myCanvas"></canvas>
+      </div>
+    </section>
+
+    <section id="home">
+      <div class="home">
+        <a href="juego/juego.html">
+        <button type ="button" class="Boton_1">
+          Regresar
+        </button><br>
+        </a>
+      </div>
+
+    </section> 
+    
+    <img id="back" src={{url_for('static', filename = "assets/back.png")}}>
+    <img id="laserBlue" src={{url_for('static', filename = "assets/laserBlue.png")}}>
+    <img id="laserGreen" src={{url_for('static', filename = "assets/laserGreen.png")}}>
+    <img id="mago" src={{url_for('static', filename = "assets/mago.png")}}>
+    <!--load babel-->
+    <!--<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
+
+    <script type="module" src={{url_for('static', filename="scripts/app.js")}}></script>
+    <!--<script type="text/babel" data-type="module" src={{url_for('static', filename="scripts/app.js")}}></script>-->
+    <!--<script  type="text/babel" data-type="module" src={{url_for('static', filename="scripts/Mago.js")}}></script>-->
+    <!--<script type="text/babel" data-type="module" src={{url_for('static', filename="scripts/Laser.js")}}></script>-->
+
+    <footer>
+      <p>Hecho por: David Ravelo y Josue Rodriguez</p>
+    </footer>
+  </body>
+</html>
