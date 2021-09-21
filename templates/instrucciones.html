@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrucciones</title>
+    <link href="{{url_for('static', filename='styles/instrucciones.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Instrucciones</h1>
+    <h2>Movimiento</h2>
+    <div class="Tw">  
+        <p class="p1"><img class="w" src=" {{url_for('static', filename='assets/w.png')}}">
+            Al presionar la tecla W el mago se movera hacia arriba</p>
+    </div>
+    <div class="Ts">
+        <p class="p2"><img class="s" src=" {{url_for('static', filename='assets/s.png')}}">
+            Al presionar la tecla S el mago se movera hacia abajo</p>
+    </div>
+    <h2>Reglas del juego</h2>
+        <p class="p3">El juego consiste en esquivar los ataques que te son lanzados moviendote verticalmente, por cada ataque que esquive el mago,
+            recibira un punto. ¡Obten la mayor cantidad de puntos posible y diviertete!
+        </p>
+    <div class="Botones">
+      <a href=/>       
+        <button class="Boton">Inicio</button> 
+      </a>       
+      <a href= game>       
+        <button class="Boton_2">Jugar</button>
+      </a>       
+    </div>
+    <footer>
+        <p class="p2">Hecho por: Josue Rodriguez</p>
+    </footer>
+</body>
+</html>

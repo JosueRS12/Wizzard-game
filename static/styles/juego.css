@@ -1,8 +1,8 @@
 body{
-  min-height: 100vh;
   background-image: url('../assets/back-game-wizard-2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0;
 }
 .container-header h1{
   color: white;
@@ -10,7 +10,6 @@ body{
 }
 
 .myCanvas{
-  /*display: none;*/
   background-color: black;
   height: 500px;
   width: 700px;
@@ -29,6 +28,10 @@ body{
   justify-content: center;
   align-items: center;
 }
+.Boton_1:hover{
+    background-color: black;
+    color: white;
+}
 
 .Boton_1{
     text-decoration: none;
@@ -43,11 +46,9 @@ body{
 }   
 
 .home{
-  position: absolute;
-  top: 85%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  margin-block-end: 3vw;
 }
 
 #back, #laserBlue, #laserGreen, #mago{
@@ -56,11 +57,11 @@ body{
 
 
 footer{
+  margin: 0;
+  padding: 0;
   position:absolute;
-  bottom: 0;
   background: #01041d;
   color: white;
   width: 100%;
   text-align: center;
-  /*align-self: flex-end;*/
 }
