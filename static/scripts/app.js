@@ -1,14 +1,11 @@
-import Mago from "../scripts/Mago.js";
-import Laser from "../scripts/Laser.js";
+import Board from "../scripts/view/board.js";
 
-
-const mago = new Mago();
-const laser = new Laser();
-
+document.addEventListener("keydown", handleKey);
 var ctx = document.getElementById("myCanvas").getContext("2d");
-document.addEventListener('keydown', handleKey);
 var tecla;
-var teclaPause = true;
+var teclaPause = false;
+var puntaje =  document.getElementById("puntaje");
+var canvas =  document.getElementById("canvas_container");
 
 function handleKey(e){
   switch (e.keyCode){
@@ -25,39 +22,17 @@ function handleKey(e){
   e.preventDefault();
 }
 
-const drawElements = () =>{
-  var imgBack = new Image();   // Create new img element
-  imgBack.addEventListener('load', ()=>{
-    ctx.drawImage(imgBack,0,0,300,150); //width height
-    if(teclaPause){
-      mago.draw(ctx);
-      laser.draw(ctx);
-      tecla = '';
-    }
-    else {  
-      mago.update(ctx, tecla);
-      laser.update(ctx, mago.colision(laser.getX(), laser.getY(), laser.getWidth()));
-      tecla = '';
-    }
-  }, false);
-  imgBack.src = 'static/assets/background-game.jpg'; // Set source path
-}
-var score = 0;
-
-var fps = 50;
+var colision = false;
+var board = new Board(ctx);
 const drawScenary = () =>{
-  ctx.beginPath();
-  score+=1/10;
-  if(mago.colision(laser.getX(),laser.getY(), laser.getWidth())){
-    window.alert(`Ha perdido. Su puntaje fue de: ${parseInt(score)} pts`);
-    score = 0;
+  if(colision){
+    puntaje.style.display = "block";
+    canvas.style.display = "none";
+    board = new Board(ctx);
   }
-  drawElements();
-  ctx.closePath();
+  colision = board.drawElements(tecla, teclaPause);
+  tecla = '';
 }
-setInterval(drawScenary,fps); // 300en ms
+setInterval(drawScenary, board.fps); // 300en ms
 
 drawScenary();
-
-
-

@@ -12,10 +12,17 @@
         <h1>Wizard Game<h1>
       </div> 
     </header>
-
     <section id="canvas">
-      <div class="canvas-container">
+      <div id="canvas_container" class="canvas-container">
         <canvas id="myCanvas" class="myCanvas"></canvas>
+      </div>
+      <div id="puntaje" class="puntaje">
+        <h1>¡Felicidades! ingresa tu nombre para guardar tu puntaje</h1>
+        <div class="Nombre">
+          <i class="fas fa-address-card"></i>
+            <input type="text" placeholder="Nickname" name="" value="">
+        </div>
+          <input class="btn" type="button" name="" value="Ingresar">
       </div>
     </section>
 
@@ -34,17 +41,11 @@
     <img id="laserBlue" src={{url_for('static', filename = "assets/laserBlue.png")}}>
     <img id="laserGreen" src={{url_for('static', filename = "assets/laserGreen.png")}}>
     <img id="mago" src={{url_for('static', filename = "assets/mago.png")}}>
-    <!--load babel-->
-    <!--<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>-->
 
     <footer>
-      <p>Hecho por: Josue Rodriguez</p>
+      <p>Hecho por: Josue Rodriguez y David Ravelo</p>
     </footer>
 
     <script type="module" src={{url_for('static', filename="scripts/app.js")}}></script>
-    <!--<script type="text/babel" data-type="module" src={{url_for('static', filename="scripts/app.js")}}></script>-->
-    <!--<script  type="text/babel" data-type="module" src={{url_for('static', filename="scripts/Mago.js")}}></script>-->
-    <!--<script type="text/babel" data-type="module" src={{url_for('static', filename="scripts/Laser.js")}}></script>-->
-
   </body>
 </html>

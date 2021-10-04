@@ -4,12 +4,16 @@ export default function Mago(){
   this.score = 0;
   this.img = document.getElementById('mago'); 
 
-  this.colision = function(laserX, laserY, laserWidth){
-    var distanciaBlock = Math.sqrt( Math.pow(laserX - (this.posX + -10),2) ); 
-    if(distanciaBlock < 40 && laserY > this.posY+5 && laserY < this.posY + 43)
-      return true; 
-    else 
-      return false;
+
+  this.colision = function(listLaser){
+    let res = false;
+    listLaser.map((laser,i )=>{
+      var distanciaInline = Math.sqrt( Math.pow(laser.posX - (this.posX - 10),2) ); 
+      if(distanciaInline < 40 && laser.posY > this.posY+5 && laser.posY < this.posY + 45){
+        res = true; 
+      }
+    });
+    return res;
   }
 
   this.draw = function(ctx){
@@ -22,9 +26,9 @@ export default function Mago(){
   }
 
   this.move = function(orden){
-    if(orden == 'arriba')
+    if(orden == 'arriba' && this.posY != 0)
       this.posY = this.posY - 5;
-    if(orden == 'abajo')
+    if(orden == 'abajo' && this.posY != 100)
       this.posY = this.posY + 5;
   }
 }
