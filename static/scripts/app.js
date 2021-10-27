@@ -3,7 +3,7 @@ import Board from "../scripts/view/board.js";
 document.addEventListener("keydown", handleKey);
 var ctx = document.getElementById("myCanvas").getContext("2d");
 var tecla;
-var teclaPause = false;
+var teclaPause = true;
 var puntaje =  document.getElementById("puntaje");
 var canvas =  document.getElementById("canvas_container");
 
@@ -26,8 +26,7 @@ var colision = false;
 var board = new Board(ctx);
 const drawScenary = () =>{
   if(colision){
-    puntaje.style.display = "block";
-    canvas.style.display = "none";
+    teclaPause = true;
     board = new Board(ctx);
   }
   colision = board.drawElements(tecla, teclaPause);

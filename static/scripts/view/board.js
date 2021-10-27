@@ -11,7 +11,6 @@ export default class Board{
 
     this.colision = false;
     this.score = 0;
-    this.teclaPause = true;
     this.fps = 60;
     this.aumento = this.fps/1000;
   }
